@@ -9,3 +9,9 @@ This directory is for holding diagrams, images, or other forms of documentation 
 ## Circuit Diagram
 
 ![CircuitDiagram](https://github.com/OPEnSLab-OSU/FloDar/blob/main/Resources/CircuitDiagram.png)
+
+## Black Box Diagram
+![Black Box Diagram](https://github.com/OPEnSLab-OSU/FloDar/blob/main/Resources/BlackBox.png)
+
+## FloDar Render
+![FloDar Render](https://github.com/OPEnSLab-OSU/FloDar/blob/main/Resources/Full_Pipe_and_Casing_Render.png)
