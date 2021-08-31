@@ -144,20 +144,12 @@
 </layers>
 <board>
 <plain>
-<wire x1="5" y1="6" x2="69" y2="6" width="0" layer="20"/>
 <hole x="69" y="9" drill="2.5"/>
 <hole x="69" y="69" drill="3"/>
 <hole x="5" y="69" drill="3"/>
 <hole x="5" y="9" drill="2.5"/>
 <dimension x1="2" y1="79" x2="72" y2="79" x3="37" y3="81" textsize="1.778" layer="1"/>
 <dimension x1="0" y1="72" x2="0" y2="6" x3="-2" y3="39" textsize="1.778" layer="1" dtype="diameter"/>
-<wire x1="72" y1="9" x2="72" y2="69" width="0" layer="20"/>
-<wire x1="69" y1="72" x2="5" y2="72" width="0" layer="20"/>
-<wire x1="2" y1="68" x2="2" y2="8" width="0" layer="20"/>
-<wire x1="5" y1="6" x2="2" y2="8" width="0" layer="20" curve="-90"/>
-<wire x1="2" y1="68" x2="5" y2="72" width="0" layer="20" curve="-90"/>
-<wire x1="69" y1="72" x2="72" y2="69" width="0" layer="20" curve="-90"/>
-<wire x1="72" y1="9" x2="69" y2="6" width="0" layer="20" curve="-90"/>
 <text x="9" y="66" size="1.778" layer="25">FloDar Power &amp; Breakout
 V1.1</text>
 <dimension x1="5" y1="73.5" x2="69" y2="73.5" x3="37" y3="73.5" textsize="1.778" layer="1"/>
@@ -171,6 +163,14 @@ V1.1</text>
 <text x="61.5" y="17" size="1.4224" layer="21" rot="R225">SIG</text>
 <text x="45" y="69" size="1.016" layer="21" rot="R45">AIN</text>
 <text x="47.5" y="69" size="1.016" layer="21" rot="R45">GND</text>
+<wire x1="2" y1="69" x2="5" y2="72" width="0" layer="20" curve="-90"/>
+<wire x1="69" y1="72" x2="72" y2="69" width="0" layer="20" curve="-90"/>
+<wire x1="72" y1="9" x2="69" y2="6" width="0" layer="20" curve="-90"/>
+<wire x1="5" y1="6" x2="2" y2="9" width="0" layer="20" curve="-90"/>
+<wire x1="2" y1="9" x2="2" y2="69" width="0" layer="20"/>
+<wire x1="5" y1="72" x2="69" y2="72" width="0" layer="20"/>
+<wire x1="72" y1="69" x2="72" y2="9" width="0" layer="20"/>
+<wire x1="69" y1="6" x2="5" y2="6" width="0" layer="20"/>
 </plain>
 <libraries>
 <library name="rcl" urn="urn:adsk.eagle:library:334">
