@@ -1805,18 +1805,17 @@ design rules under a new name.</description>
 <contactref element="ADS1115" pad="3"/>
 <contactref element="ADS1115" pad="9"/>
 <contactref element="MAX31856" pad="7"/>
-<contactref element="USFM" pad="2"/>
 <contactref element="TURBIDITY" pad="2"/>
 <wire x1="16.84" y1="21.25" x2="16.84" y2="23.75" width="0.8128" layer="1"/>
 <wire x1="16.84" y1="23.75" x2="14.97" y2="25.62" width="0.8128" layer="1"/>
 <wire x1="14.97" y1="25.62" x2="14.97" y2="32.27" width="0.8128" layer="1"/>
-<contactref element="R1" pad="2"/>
 <contactref element="R2" pad="1"/>
-<via x="68" y="24" extent="1-16" drill="0.35"/>
+<contactref element="USFM" pad="2"/>
 <wire x1="65.5" y1="18" x2="65.5" y2="23.922" width="0.8128" layer="1"/>
-<wire x1="65.5" y1="23.922" x2="65.422" y2="24" width="0.8128" layer="1"/>
+<contactref element="R1" pad="2"/>
 <wire x1="65.422" y1="24" x2="65.422" y2="30" width="0.8128" layer="1"/>
-<wire x1="65.422" y1="24" x2="68" y2="24" width="0.508" layer="1"/>
+<wire x1="65.422" y1="24" x2="68.5" y2="24" width="0.508" layer="1"/>
+<via x="68.5" y="24" extent="1-16" drill="0.35"/>
 </signal>
 <signal name="12V">
 <contactref element="JP1" pad="1"/>
