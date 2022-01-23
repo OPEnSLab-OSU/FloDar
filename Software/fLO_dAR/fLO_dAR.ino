@@ -93,7 +93,7 @@ void loop()
 	Loom.SDCARD().log();
 
 	// set the RTC alarm to a duration of 10 seconds with TimeSpan
-	Loom.InterruptManager().RTC_alarm_duration(TimeSpan(0,0,10,0));
+	Loom.InterruptManager().RTC_alarm_duration(TimeSpan(0,0,15,0));
 	Loom.InterruptManager().reconnect_interrupt(12);
 
   digitalWrite(13, LOW);
