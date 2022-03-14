@@ -19,10 +19,10 @@
 			'name':'SD',\
 			'params': 'default'\
 		},\
-		{\
-			'name':'DS3231',\
-			'params':'default'\
-		},\
+    {\ 
+​      'name':'DS3231',\ 
+​      'params':[11, false, true]\ 
+​    },\
 		{\
 			'name':'Interrupt_Manager',\
 			'params':[0]\
