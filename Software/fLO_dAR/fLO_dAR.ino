@@ -66,8 +66,8 @@ void setup()
 
 void loop() 
 {
-	digitalWrite(5, LOW); // Disable 3.3V rail
-  digitalWrite(6, HIGH);  // Disable 5V rail
+	digitalWrite(5, LOW); // Enable 3.3V rail
+  digitalWrite(6, HIGH);  // Enable 5V rail
   digitalWrite(13, HIGH);
   digitalWrite(LED_BUILTIN, HIGH);
 	// As it turns out, if the SD card is initialized and you change
@@ -97,8 +97,8 @@ void loop()
 	Loom.InterruptManager().reconnect_interrupt(12);
 
   digitalWrite(13, LOW);
-	digitalWrite(5, HIGH); // Enable 3.3V rail
-	digitalWrite(6, LOW);  // Enable 5V rail
+	digitalWrite(5, HIGH); // Disable 3.3V rail
+	digitalWrite(6, LOW);  // Disable 5V rail
 	pinMode(23, INPUT);
 	pinMode(24, INPUT);
 	pinMode(10, INPUT);
