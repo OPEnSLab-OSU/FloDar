@@ -55,7 +55,7 @@ void loop() {
   // Log the data to the SD card              
   hypnos.logToSD();
 
-  // Set the RTC interrupt alarm to wake the device in 10 seconds
+  // Set the RTC interrupt alarm to wake the device in 15 minutes
   hypnos.setInterruptDuration(TimeSpan(0, 0, 15, 0));
 
   // Reattach to the interrupt after we have set the alarm so we can have repeat triggers
