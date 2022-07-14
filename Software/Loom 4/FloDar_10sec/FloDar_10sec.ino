@@ -15,6 +15,12 @@
 // Currently unused
 //#include <Sensors/SPI/Loom_MAX318XX/Loom_MAX31856.h>
 
+// Sleep Duration
+#define DAY    0
+#define HOUR   0
+#define MINUTE 0
+#define SECOND 10
+
 Manager manager("Device", 1);
 
 // Create a new Hypnos object setting the version to determine the SD Chip select pin, and starting without the SD card functionality
@@ -55,8 +61,8 @@ void loop() {
   // Log the data to the SD card              
   hypnos.logToSD();
 
-  // Set the RTC interrupt alarm to wake the device in 10 seconds
-  hypnos.setInterruptDuration(TimeSpan(0, 0, 0, 10));
+  // Set the RTC interrupt alarm to wake the device in given time
+  hypnos.setInterruptDuration(TimeSpan(DAY, HOUR, MINUTE, SECOND));
 
   // Reattach to the interrupt after we have set the alarm so we can have repeat triggers
   hypnos.reattachRTCInterrupt();
