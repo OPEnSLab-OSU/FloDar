@@ -3,13 +3,17 @@
  * 
  * NOTE: THIS EXAMPLE DOESN'T WAIT FOR SERIAL AFTER SLEEPING
  * MANAGER MUST BE INCLUDED FIRST IN ALL CODE
+ * 
+ * MAX31856 is currently unused, so disabled to save compile time
+ * Thermocouple unused as well, however is attached to ADS1115
  */
 
 #include <Loom_Manager.h>
 
 #include <Hardware/Loom_Hypnos/Loom_Hypnos.h>
 #include <Sensors/I2C/Loom_ADS1115/Loom_ADS1115.h>
-#include <Sensors/SPI/Loom_MAX318XX/Loom_MAX31856.h>
+// Currently unused
+//#include <Sensors/SPI/Loom_MAX318XX/Loom_MAX31856.h>
 
 Manager manager("Device", 1);
 
@@ -17,8 +21,8 @@ Manager manager("Device", 1);
 Loom_Hypnos hypnos(manager, HYPNOS_VERSION::V3_3, TIME_ZONE::PST);
 
 Loom_ADS1115 ads(manager);
-Loom_MAX31856 max56(manager);
-
+// Currently unused
+//Loom_MAX31856 max56(manager);
 // Called when the interrupt is triggered 
 void isrTrigger(){
   hypnos.wakeup();
