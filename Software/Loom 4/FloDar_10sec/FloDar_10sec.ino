@@ -12,6 +12,7 @@
 
 #include <Hardware/Loom_Hypnos/Loom_Hypnos.h>
 #include <Sensors/I2C/Loom_ADS1115/Loom_ADS1115.h>
+#include <Sensors/Loom_Analog/Loom_Analog.h>
 // Currently unused
 //#include <Sensors/SPI/Loom_MAX318XX/Loom_MAX31856.h>
 
@@ -25,7 +26,7 @@ Manager manager("Device", 1);
 
 // Create a new Hypnos object setting the version to determine the SD Chip select pin, and starting without the SD card functionality
 Loom_Hypnos hypnos(manager, HYPNOS_VERSION::V3_3, TIME_ZONE::PST);
-
+Loom_Analog analog(manager);
 Loom_ADS1115 ads(manager);
 // Currently unused
 //Loom_MAX31856 max56(manager);
