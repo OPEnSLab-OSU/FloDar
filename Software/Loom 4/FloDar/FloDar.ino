@@ -30,6 +30,7 @@ Loom_Analog analog(manager);
 Loom_ADS1115 ads(manager);
 // Currently unused
 //Loom_MAX31856 max56(manager);
+
 // Called when the interrupt is triggered 
 void isrTrigger(){
   hypnos.wakeup();
