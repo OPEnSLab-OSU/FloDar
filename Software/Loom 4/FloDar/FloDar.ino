@@ -22,6 +22,9 @@
 #define MINUTE 15
 #define SECOND 0
 
+// Wait to measure (milliseconds)
+#define DELAY 10000
+
 Manager manager("Device", 1);
 
 // Create a new Hypnos object setting the version to determine the SD Chip select pin, and starting without the SD card functionality
@@ -52,6 +55,9 @@ void setup() {
 }
 
 void loop() {
+  
+  // Wait for USFM to boot up before taking data
+  delay(DELAY);
 
   // Measure and package data
   manager.measure();

@@ -22,11 +22,14 @@
 #define MINUTE 0
 #define SECOND 30
 
+// Wait to measure (milliseconds)
+#define DELAY 10000
+
 Manager manager("Device", 1);
 
 // Create a new Hypnos object setting the version to determine the SD Chip select pin, and starting without the SD card functionality
 Loom_Hypnos hypnos(manager, HYPNOS_VERSION::V3_3, TIME_ZONE::PST);
-Loom_Analog analog(manager);
+//Loom_Analog analog(manager);
 Loom_ADS1115 ads(manager);
 // Currently unused
 //Loom_MAX31856 max56(manager);
@@ -51,7 +54,10 @@ void setup() {
 }
 
 void loop() {
-
+  
+  // Wait for USFM to boot up before taking data
+  delay(DELAY);
+  
   // Measure and package data
   manager.measure();
   manager.package();
