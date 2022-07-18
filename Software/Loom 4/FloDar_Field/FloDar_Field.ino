@@ -69,6 +69,8 @@ void setup() {
 }
 
 void loop() {
+  // Set the RTC interrupt alarm to wake the device in given time
+  hypnos.setInterruptDuration(TimeSpan(DAY, HOUR, MINUTE, SECOND - (int)(DELAY/1000)));
   
   // Wait for USFM to boot up before taking data
   delay(DELAY);

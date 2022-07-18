@@ -69,7 +69,9 @@ void setup() {
 }
 
 void loop() {
-  
+  // Set the RTC interrupt alarm to wake the device in given time
+  hypnos.setInterruptDuration(TimeSpan(DAY, HOUR, MINUTE, SECOND - (int)(DELAY/1000)));
+
   // Wait for USFM to boot up before taking data
   delay(DELAY);
 
@@ -85,9 +87,6 @@ void loop() {
 
   // Log the data to the SD card              
   hypnos.logToSD();
-
-  // Set the RTC interrupt alarm to wake the device in given time
-  hypnos.setInterruptDuration(TimeSpan(DAY, HOUR, MINUTE, SECOND - (int)(DELAY/1000)));
 
   // Reattach to the interrupt after we have set the alarm so we can have repeat triggers
   hypnos.reattachRTCInterrupt();
