@@ -26,7 +26,7 @@
 #define DELAY 10000
 
 // Analog to Flowrate Conversion Formula Constants
-#define MAXBITS     2^15
+#define MAXBITS     16384
 #define MAXFLOWRATE 150
 
 Manager manager("Device", 1);
