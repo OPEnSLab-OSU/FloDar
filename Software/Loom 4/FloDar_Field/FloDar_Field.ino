@@ -25,6 +25,10 @@
 // Wait to measure (milliseconds)
 #define DELAY 10000
 
+// Analog to Flowrate Conversion Formula Constants
+#define MAXBITS     2^15
+#define MAXFLOWRATE 150
+
 Manager manager("Device", 1);
 
 // Create a new Hypnos object setting the version to determine the SD Chip select pin, and starting without the SD card functionality
@@ -33,6 +37,11 @@ Loom_Analog analog(manager);
 Loom_ADS1115 ads(manager);
 // Currently unused
 //Loom_MAX31856 max56(manager);
+
+// Analog to Flowrate Conversion Formula
+float calcFlowRate(){
+    return ((ads.getAnalog(2) / MAXBITS) * MAXFLOWRATE);
+}
 
 // Called when the interrupt is triggered 
 void isrTrigger(){
@@ -62,6 +71,9 @@ void loop() {
   // Measure and package data
   manager.measure();
   manager.package();
+
+  // Add the flow rate to the package
+  manager.addData("Flow Meter", "Flow Rate", calcFlowRate());
   
   // Print the current JSON packet
   manager.display_data();            
