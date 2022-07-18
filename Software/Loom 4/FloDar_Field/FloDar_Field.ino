@@ -40,7 +40,7 @@ Loom_ADS1115 ads(manager);
 
 // Analog to Flowrate Conversion Formula
 float calcFlowRate(){
-    return ((ads.getAnalog(3) / MAXBITS) * MAXFLOWRATE);
+    return (((float)ads.getAnalog(3) / MAXBITS) * MAXFLOWRATE);
 }
 
 // Called when the interrupt is triggered 
