@@ -40,7 +40,7 @@ Loom_ADS1115 ads(manager);
 
 // Analog to Flowrate Conversion Formula
 float calcFlowRate(){
-    return ((ads.getAnalog(2) / MAXBITS) * MAXFLOWRATE);
+    return ((ads.getAnalog(3) / MAXBITS) * MAXFLOWRATE);
 }
 
 // Called when the interrupt is triggered 
@@ -52,6 +52,11 @@ void setup() {
 
   // Start the serial interface
   manager.beginSerial();
+
+  if (DELAY/1000 >= SECOND && MINUTE == 0 && HOUR == 0 && DAY == 0) {
+    Serial.println("You cannot have your time between measurements equal to or less than your delay!");
+    return;
+  }
 
   // Enable the hypnos rails
   hypnos.enable();
@@ -82,11 +87,11 @@ void loop() {
   hypnos.logToSD();
 
   // Set the RTC interrupt alarm to wake the device in given time
-  hypnos.setInterruptDuration(TimeSpan(DAY, HOUR, MINUTE, SECOND));
+  hypnos.setInterruptDuration(TimeSpan(DAY, HOUR, MINUTE, SECOND - (int)(DELAY/1000)));
 
   // Reattach to the interrupt after we have set the alarm so we can have repeat triggers
   hypnos.reattachRTCInterrupt();
-  
+
   // Put the device into a deep sleep, operation HALTS here until the interrupt is triggered
   hypnos.sleep(false);
 }
