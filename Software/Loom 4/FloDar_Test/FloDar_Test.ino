@@ -53,8 +53,8 @@ void setup() {
   // Start the serial interface
   manager.beginSerial();
 
-  if (DELAY/1000 >= SECOND && MINUTE == 0 && HOUR == 0 && DAY == 0) {
-    Serial.println("You cannot have your time between measurements equal to or less than your delay!");
+  if (DELAY/1000 >= SECOND + 1 && MINUTE == 0 && HOUR == 0 && DAY == 0) {
+    Serial.println("You need more time between measurements!");
     return;
   }
 
@@ -71,7 +71,7 @@ void setup() {
 void loop() {
 
   // Wait for USFM to boot up before taking data
-  manager.pause(DELAY);
+  manager.pause(DELAY - 1000);
 
   // Measure and package data
   manager.measure();
