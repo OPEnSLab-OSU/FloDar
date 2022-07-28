@@ -53,8 +53,8 @@ void setup() {
   // Start the serial interface
   manager.beginSerial();
 
-  if (DELAY/1000 >= SECOND && MINUTE == 0 && HOUR == 0 && DAY == 0) {
-    Serial.println("You cannot have your time between measurements equal to or less than your delay!");
+  if (DELAY/1000 >= SECOND + 1 && MINUTE == 0 && HOUR == 0 && DAY == 0) {
+    Serial.println("You need more time between measurements!");
     return;
   }
 
@@ -70,10 +70,10 @@ void setup() {
 
 void loop() {
   // Set the RTC interrupt alarm to wake the device in given time
-  hypnos.setInterruptDuration(TimeSpan(DAY, HOUR, MINUTE, SECOND - (int)(DELAY/1000)));
-  
+  hypnos.setInterruptDuration(TimeSpan(DAY, HOUR, MINUTE, SECOND));
+
   // Wait for USFM to boot up before taking data
-  delay(DELAY);
+  manager.pause(DELAY);
 
   // Measure and package data
   manager.measure();
@@ -87,9 +87,6 @@ void loop() {
 
   // Log the data to the SD card              
   hypnos.logToSD();
-
-  // Set the RTC interrupt alarm to wake the device in given time
-  hypnos.setInterruptDuration(TimeSpan(DAY, HOUR, MINUTE, SECOND - (int)(DELAY/1000)));
 
   // Reattach to the interrupt after we have set the alarm so we can have repeat triggers
   hypnos.reattachRTCInterrupt();
