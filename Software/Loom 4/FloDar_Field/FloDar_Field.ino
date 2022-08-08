@@ -53,7 +53,7 @@ void setup() {
   // Start the serial interface
   manager.beginSerial();
 
-  if (DELAY/1000 >= SECOND + 1 && MINUTE == 0 && HOUR == 0 && DAY == 0) {
+  if ((DELAY/1000 >= SECOND + 1) && (MINUTE == 0) && (HOUR == 0) && (DAY == 0)) {
     Serial.println("You need more time between measurements!");
     return;
   }
