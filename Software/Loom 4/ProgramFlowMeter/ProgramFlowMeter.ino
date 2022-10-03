@@ -11,7 +11,7 @@
 Manager manager("Device", 1);
 
 // Create a new Hypnos object setting the version to determine the SD Chip select pin, and starting without the SD card functionality
-Loom_Hypnos hypnos(manager, HYPNOS_VERSION::V3_3, TIME_ZONE::PST);
+Loom_Hypnos hypnos(manager, HYPNOS_VERSION::V3_3, TIME_ZONE::PST, false);
 
 void isrTrigger(){
   hypnos.wakeup();
