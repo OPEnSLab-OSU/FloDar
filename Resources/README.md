@@ -8,7 +8,7 @@ This directory is for holding diagrams, images, or other forms of documentation 
 
 ## Circuit Diagram
 
-![CircuitDiagram](https://github.com/OPEnSLab-OSU/FloDar/blob/main/Resources/CircuitDiagram.png)
+![CircuitDiagram](https://github.com/OPEnSLab-OSU/FloDar/blob/main/Resources/CircuitDiagramv4.png)
 
 ## Black Box Diagram
 ![Black Box Diagram](https://github.com/OPEnSLab-OSU/FloDar/blob/main/Resources/BlackBox.png)
