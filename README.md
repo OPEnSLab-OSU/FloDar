@@ -1,8 +1,8 @@
 # FloDar | [Updates](https://github.com/OPEnSLab-OSU/OPEnS-Lab-Home/wiki/FloDar-updates) | [Wiki](https://github.com/OPEnSLab-OSU/OPEnS-Lab-Home/wiki/FloDar)
 
-Project Lead: Dexter Carpenter
+Project Lead: Cara Walter
 
-This repository is for record of software, hardware, and documentation of FloDar.
+This repository contains software, hardware, and documentation for FloDar.
 
 See our [Wiki](https://github.com/OPEnSLab-OSU/OPEnS-Lab-Home/wiki/FloDar) for more information!
 
