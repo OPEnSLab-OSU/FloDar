@@ -26,7 +26,7 @@
 // Wait to measure (milliseconds)
 #define DELAY 10000
 
-// Analog to Flowrate Conversion Formula Constants
+// Analog to Flowrate Conversion Formula Constants: 2^14 for max bits at 2/3 gain
 #define MAXBITS     16384
 #define MAXFLOWRATE 150
 
